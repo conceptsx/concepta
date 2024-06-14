@@ -31,16 +31,16 @@ def index():
 
 # Route for category pages
 @app.route('/category/<category_name>')
-def category(category_name):
-    category_title, quizzes = get_category_data(category_name)
+@app.route('/category/<category_name>/<subcategory_name>')
+def category(category_name, subcategory_name=None):
+    category_title, quizzes = get_category_data(category_name, subcategory_name)
     for quiz in quizzes:
-        quiz_data_variable = quiz["url"].split("/")[-1].replace("-", "_")
-        if quiz_data_variable in quiz_data_map:
-            quiz["questions_count"] = len(quiz_data_map[quiz_data_variable])
-        else:
-            quiz["questions_count"] = 0
-    print(f"Category route accessed: {category_name}")
+        if 'url' in quiz:
+            quiz_data_variable = quiz["url"].split("/")[-1].replace("-", "_")
+            if quiz_data_variable in quiz_data_map:
+                quiz["questions_count"] = len(quiz_data_map[quiz_data_variable])
     return render_template('category.html', category_title=category_title, quizzes=quizzes)
+
 
 # Route for the quiz page
 @app.route('/quiz/<quiz_name>')
