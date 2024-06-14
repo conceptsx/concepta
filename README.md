@@ -73,7 +73,7 @@ python -m venv .venv
 
 4. Install dependencies
    ~~~
-   pip install flask
+   pip install -r requirements.txt
 
 ### Running the Application
 1. Start the Flask app.
