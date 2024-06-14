@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ quiz_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <a href="/">Home</a>
+        <a href="/category/pta">PTA Quizzes</a>
+        <a href="/category/other">Other Quizzes</a>
+        <a href="/category/science">Science Quizzes</a>
+    </header>
+    <div class="content">
+        <div id="quiz-container">
+            <h1>{{ quiz_title }}</h1>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div id="question"></div>
+            <div id="options"></div>
+            <button id="next-btn" onclick="nextQuestion()">Next</button>
+            <button id="retake-btn" style="display:none;" onclick="retakeQuiz()">Retake Quiz</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

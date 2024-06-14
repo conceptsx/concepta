@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <a href="/">Home</a>
+        <a href="/category/pta">PTA Quizzes</a>
+        <a href="/category/other">Other Quizzes</a>
+        <a href="/category/science">Science Quizzes</a>
+    </header>
+    <div class="content">
+        <h1>{{ category_title }}</h1>
+        <div class="quiz-list">
+            {% for quiz in quizzes %}
+                <a href="{{ quiz.url }}" class="quiz-link">
+                    <div class="quiz-card">
+                        <h2>{{ quiz.title }}</h2>
+                        <p>{{ quiz.questions_count }} questions</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
