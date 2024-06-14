@@ -6,50 +6,51 @@ document.addEventListener("DOMContentLoaded", () => {
     const quizTitle = document.querySelector('h1').innerText;
     let quizApiUrl;
 
-    // Determine the API URL based on the quiz title
-    switch (quizTitle) {
-        case "PTA Abbreviations Quiz":
+    // Normalize the quiz title to match the expected API route
+    const normalizedQuizTitle = quizTitle.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9\-]/g, '');
+
+    switch (normalizedQuizTitle) {
+        case "pta-abbreviations-quiz":
             quizApiUrl = '/api/pta-abbreviations';
             break;
-        case "Ankle and Foot OIAN Quiz":
+        case "ankle-and-foot-oian-quiz":
             quizApiUrl = '/api/ankle-and-foot-oian';
             break;
-        case "Elbow and Forearm OIAN Quiz":
+        case "elbow-and-forearm-oian-quiz":
             quizApiUrl = '/api/elbow-and-forearm-oian';
             break;
-        case "Hip OIAN Quiz":
+        case "hip-oian-quiz":
             quizApiUrl = '/api/hip-oian';
             break;
-        case "Knee OIAN Quiz":
+        case "knee-oian-quiz":
             quizApiUrl = '/api/knee-oian';
             break;
-        case "Neck OIAN Quiz":
+        case "neck-oian-quiz":
             quizApiUrl = '/api/neck-oian';
             break;
-        case "Shoulder OIAN Quiz":
+        case "shoulder-oian-quiz":
             quizApiUrl = '/api/shoulder-oian';
             break;
-        case "Wrist and Hand OIAN Quiz":
+        case "wrist-and-hand-oian-quiz":
             quizApiUrl = '/api/wrist-and-hand-oian';
             break;
-        case "Spine and Trunk OIAN Quiz":
+        case "spine-and-trunk-oian-quiz":
             quizApiUrl = '/api/spine-and-trunk-oian';
             break;
-        case "Other Quiz":
+        case "other-quiz":
             quizApiUrl = '/api/other';
             break;
-        case "Science Quiz":
+        case "science-quiz":
             quizApiUrl = '/api/science';
             break;
         default:
-            console.error("Unknown quiz title:", quizTitle);
+            console.error("Unknown quiz title:", normalizedQuizTitle);
     }
 
     if (quizApiUrl) {
         console.log(`Fetching quiz data from ${quizApiUrl}`);
         fetch(quizApiUrl)
             .then(response => {
-                console.log('Response received:', response);
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
                 }
@@ -103,13 +104,10 @@ function showQuestion() {
 function selectOption(selectedIndex) {
     const currentQuestion = questions[currentQuestionIndex];
     const options = document.querySelectorAll('.option');
-    const correctIndex = currentQuestion.options.findIndex(option => option.charAt(0).toLowerCase() === currentQuestion.answer);
-
-    console.log(`Selected Index: ${selectedIndex}, Correct Index: ${correctIndex}`);
+    const correctIndex = currentQuestion.options.findIndex(option => option === currentQuestion.options[currentQuestion.answer.charCodeAt(0) - 97]);
 
     options.forEach((button, index) => {
         button.disabled = true; // Disable all buttons
-
         if (index === correctIndex) {
             button.classList.add('correct'); // Always highlight the correct option in green
         }

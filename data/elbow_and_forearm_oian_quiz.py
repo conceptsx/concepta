@@ -1,4 +1,4 @@
-elbow_forearm_oian_quiz = [
+elbow_and_forearm_oian_quiz = [
     {"question": "What is the origin of Biceps Brachii?", "options": ["Supraglenoid tubercle of scapula", "Medial epicondyle of humerus", "Olecranon process of ulna"], "answer": "a"},
     {"question": "What is the insertion of Biceps Brachii?", "options": ["Coronoid process of ulna", "Radial tuberosity", "Distal phalanges of fingers"], "answer": "b"},
     {"question": "What is the action of Biceps Brachii?", "options": ["Pronates forearm", "Extends elbow", "Flexes elbow and supinates forearm"], "answer": "c"},
