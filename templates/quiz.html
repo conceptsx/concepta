@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ quiz_title }}</title>
+    <title>{{ quiz_title.replace(" Quiz", "") }}</title> <!-- Removing 'Quiz' from the title -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -11,11 +11,10 @@
         <a href="/">Home</a>
         <a href="/category/pta">Physical Therapy</a>
         <a href="/category/other">Other</a>
-        <a href="/category/science">Science</a>
     </header>
     <div class="content">
         <div id="quiz-container">
-            <h1>{{ quiz_title }}</h1>
+            <h1>{{ quiz_title.replace(" Quiz", "") }}</h1> <!-- Removing 'Quiz' from the title -->
             <div id="progress-container">
                 <div id="progress-bar"></div>
             </div>

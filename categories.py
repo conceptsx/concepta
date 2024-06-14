@@ -34,12 +34,6 @@ def get_category_data(category_name, subcategory_name=None):
             # Add more Other quizzes here
         ]
         category_title = "Other Quizzes"
-    elif category_name == 'science':
-        quizzes = [
-            {"title": "Science Quiz", "url": "/quiz/science"},
-            # Add more Science quizzes here
-        ]
-        category_title = "Science Quizzes"
     else:
         quizzes = []
         category_title = "Unknown Category"

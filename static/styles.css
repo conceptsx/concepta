@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f9;
 }
 
 .navbar {
@@ -31,6 +32,8 @@ body {
 
 h1 {
     margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
 }
 
 /* Quiz List (Category Page) */
@@ -47,7 +50,7 @@ h1 {
 }
 
 .quiz-card {
-    background-color: #f9f9f9;
+    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
@@ -79,10 +82,11 @@ h1 {
 #quiz-container {
     max-width: 600px;
     margin: 0 auto;
-    border: 1px solid #000; /* Black border around the quiz container */
+    border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .option {
@@ -147,4 +151,46 @@ h1 {
 #next-btn:disabled, #retake-btn:disabled {
     background-color: #ddd;
     cursor: not-allowed;
+}
+
+/* Welcome Page Enhancements */
+.welcome-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.welcome-container h2 {
+    color: #4caf50;
+    margin-top: 0;
+}
+
+.welcome-container p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.instructions, .benefits {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.instructions ul, .benefits ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.instructions ul li, .benefits ul li {
+    background-color: #e7f5e6;
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 5px solid #4caf50;
+    border-radius: 4px;
+}
+
+.instructions ul li:hover, .benefits ul li:hover {
+    background-color: #d4edda;
 }

@@ -10,37 +10,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const normalizedQuizTitle = quizTitle.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9\-]/g, '');
 
     switch (normalizedQuizTitle) {
-        case "pta-abbreviations-quiz":
+        case "pta-abbreviations":
             quizApiUrl = '/api/pta-abbreviations';
             break;
-        case "ankle-and-foot-oian-quiz":
+        case "ankle-and-foot-oian":
             quizApiUrl = '/api/ankle-and-foot-oian';
             break;
-        case "elbow-and-forearm-oian-quiz":
+        case "elbow-and-forearm-oian":
             quizApiUrl = '/api/elbow-and-forearm-oian';
             break;
-        case "hip-oian-quiz":
+        case "hip-oian":
             quizApiUrl = '/api/hip-oian';
             break;
-        case "knee-oian-quiz":
+        case "knee-oian":
             quizApiUrl = '/api/knee-oian';
             break;
-        case "neck-oian-quiz":
+        case "neck-oian":
             quizApiUrl = '/api/neck-oian';
             break;
-        case "shoulder-oian-quiz":
+        case "shoulder-oian":
             quizApiUrl = '/api/shoulder-oian';
             break;
-        case "wrist-and-hand-oian-quiz":
+        case "wrist-and-hand-oian":
             quizApiUrl = '/api/wrist-and-hand-oian';
             break;
-        case "spine-and-trunk-oian-quiz":
+        case "spine-and-trunk-oian":
             quizApiUrl = '/api/spine-and-trunk-oian';
             break;
-        case "other-quiz":
+        case "other":
             quizApiUrl = '/api/other';
             break;
-        case "science-quiz":
+        case "science":
             quizApiUrl = '/api/science';
             break;
         default:
