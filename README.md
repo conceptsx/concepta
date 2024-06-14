@@ -1,5 +1,7 @@
 # ConcePTA Quiz Platform
 
+This is a project I used to familiarize myself with JavaScript, and Flask for the backend. Reason for creating was to help my wife study for her Physical Therapy exams.
+
 ConcePTA is a web-based quiz platform designed for Physical Therapy Assistant (PTA) exam preparation and other educational quizzes. The platform allows users to take quizzes, view results, and retake quizzes. This project uses Flask for the backend and vanilla JavaScript for the frontend.
 
 ## Features
